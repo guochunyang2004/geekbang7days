@@ -59,3 +59,34 @@
 * 基本功和编程指法
 * 常见的时间、空间复杂度
 
+### 算法
+
+​	费波那奇数列算法
+
+## 数组、链表、跳表
+
+### 数组、链表、跳表的基本实现
+
+* 数组、链表、跳表的原理和实现
+* 三者的时间复杂度、空间复杂度
+  * linkedList时间复杂度
+    * prepend O(1)
+    * append O(1)
+    * <u>lookup O(n)</u>
+    * insert O(1)   ？是否需要先查找
+    * delete O(1)
+  * Array的时间复杂度
+    * prepend O(1)
+    * append O(1)
+    * <u>lookup O(1)</u>
+    * <u>insert O(n)</u>
+    * <u>delete O(n)</u>
+* 工程运用：LRU算法或redis算法
+* 跳表：升维思想+空间换时间：
+  * redis数据结构：有序集类型、字典
+  * Redis跳表介绍：https://redisbook.readthedocs.io/en/latest/internal-datastruct/skiplist.html
+
+### 实战题目
+
+* 移动0
+* 盛水最多的容器、爬楼梯

@@ -89,4 +89,35 @@
 ### 实战题目
 
 * 移动0
-* 盛水最多的容器、爬楼梯
+* 盛水最多的容器、爬楼梯* 盛水最多的容器、爬楼梯
+
+## 栈、队列、优先队列、双端队列
+
+### 栈和队列的实现与特性
+
+* Stack 栈
+  * 先入后出；添加、删除皆为O(1)，查询O(n)
+  * 方法：peek、pop
+  * 官方推荐用Deque
+  * 源码分析
+  * 扩展：实现类
+* Queue 队列
+  * 先入先出；添加、删除皆为O(1)，查询O(n)
+  * 方法：add、remove、element抛异常；offer、poll、peek返回null；
+  * 扩展：实现类
+* Deque 双端队列(double ended queue)
+  * 头和尾都可以出；插入、删除皆是O(1)，查询是O(n)
+  * 方法：addFirst、addLast
+  * 扩展：实现类
+* Priority Queue 优先级队列
+  * 插入操作O（1）；取出操作O(logN)按优先级取出
+  * 底层数据结构多样，可以是heap、二叉树、Fibonacci堆、红黑树、treap
+  * 优先级排序实现Comparator接口
+* 作业
+  * 分析源码：Queue、Priority Queue
+* python栈和队列实现
+  * heapq
+  * 高性能container库：https://docs.python.org/2/library/collections.html
+
+### 实战题目解析：有效的括号、做小栈等问题
+

@@ -7,6 +7,7 @@
     <groupId>com.gcy.demo</groupId>
     <artifactId>maven-demo</artifactId>
     <version>1.0.0</version>
+
     <build>
         <plugins>
             <plugin>

@@ -13,6 +13,8 @@ public class JavaThreadDemoApplication {
     private static final int age = 1;
     private static final Integer name = 1;
 
+    private static ThreadLocal<Integer> num = new ThreadLocal();
+
     public static void main(String[] args) throws InterruptedException, ExecutionException {
       //  System.out.println("JavaThreadDemoApplication");
         //MyThreadTest();
@@ -27,7 +29,7 @@ public class JavaThreadDemoApplication {
        //System.out.println(HungrySimpleInstance.getSimpleInstance().getName());
 //       System.out.println(LazyLockSimpleInstance.getSimpleInstance().getName());
 //       System.out.println( LazyStaticClassSimpleInstance.getSimpleInstance().getName());
-
+        num.set(1);
         OrderManage.save();
     }
 

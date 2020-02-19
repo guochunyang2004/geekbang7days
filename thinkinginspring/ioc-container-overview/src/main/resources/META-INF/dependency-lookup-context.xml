@@ -8,6 +8,16 @@
     <bean id="user" class="com.gcy.demo.ioc.overview.domain.User">
         <property name="id" value="1" />
         <property name="name" value="张三" />
+        <property name="city" value="HANGZHOU" />
+        <property name="workCities" value="HANGZHOU,BEIJING" />
+<!--        <property name="lifeCites" value="BEIJING,SHANGHAI" />-->
+        <property name="lifeCites">
+            <list>
+                <value>BEIJING</value>
+                <value>SHANGHAI</value>
+            </list>
+        </property>
+        <property name="configFileLocation" value="classpath:/META-INF/user-config.properties" />
     </bean>
 
     <bean id="superUser" class="com.gcy.demo.ioc.overview.domain.SuperUser" parent="user" primary="true" >

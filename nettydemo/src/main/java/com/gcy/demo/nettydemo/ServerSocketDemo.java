@@ -8,10 +8,38 @@ import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.UnknownHostException;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ThreadPoolExecutor;
 
 public class ServerSocketDemo {
 
-    public void test() {
+    public static final ThreadPoolExecutor threadPoolExecutor =(ThreadPoolExecutor) Executors.newCachedThreadPool();
+
+    public static void main(String[] args) {
+        //test();
+        socketDemo();
+    }
+
+    public static void socketDemo(){
+        try {
+            ServerSocket serverSocket = new ServerSocket(8080);
+            System.out.println("启动8080");
+            byte[] bytes =new byte[1024];
+            while (true){
+                Socket socketConnection = serverSocket.accept();
+                threadPoolExecutor.submit(()->{
+                    socketConnection.getInputStream().read(bytes);
+                    System.out.println(new String(bytes));
+                    return null;
+                });
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    public static void test() {
 
 
         int port = 4343; //端口号
@@ -27,6 +55,7 @@ public class ServerSocketDemo {
                         Thread sHandlerThread = new Thread(new Runnable() {
                             @Override
                             public void run() {
+
                                 try (PrintWriter printWriter = new PrintWriter(socket.getOutputStream())) {
                                     printWriter.println("hello world！");
                                     printWriter.flush();

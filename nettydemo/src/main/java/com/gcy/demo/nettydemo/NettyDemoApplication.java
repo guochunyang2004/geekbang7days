@@ -16,7 +16,7 @@ public class NettyDemoApplication {
        // final EchoServerHandler
         try{
             ServerBootstrap b = new ServerBootstrap();
-            //b.group(boosGroup,workerGroup).channel()
+            b.group(boosGroup,workerGroup);//.channel()
         }
         catch (Exception ex){
 
